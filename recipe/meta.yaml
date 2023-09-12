@@ -1,5 +1,5 @@
 {% set name = "apache-airflow-providers-apprise" %}
-{% set version = "1.0.1" %}
+{% set version = "1.0.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/apache-airflow-providers-apprise-{{ version }}.tar.gz
-  sha256: 405094222f876f49ff4c3ed7d629e65ede32faa0784c8b372c56cbec10a081f3
+  sha256: 44f4ab9a4b03fb4aee4deec692b61a089a27f400f449a447c7f8fa3f8d4139ae
 
 build:
   noarch: python
