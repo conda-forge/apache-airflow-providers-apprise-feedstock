@@ -1,13 +1,13 @@
 {% set name = "apache-airflow-providers-apprise" %}
-{% set version = "1.4.0" %}
+{% set version = "1.4.1" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/apache_airflow_providers_apprise-{{ version }}.tar.gz
-  sha256: 89b9a16e6e6dced209527566e49936ed9eef64d00d6138f2e30ce5d56f896aea
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/apache_airflow_providers_apprise-{{ version }}.tar.gz
+  sha256: 473b92907badbae7e50f0ccd72ef3d2500ad1ddd102cacbcdd324578ace86667
 
 build:
   noarch: python
@@ -16,11 +16,11 @@ build:
 
 requirements:
   host:
-    - python >=3.8,<4.dev0
-    - flit-core >=3.2,<4
+    - python {{ python_min }}
+    - flit-core ==3.10.1
     - pip
   run:
-    - python >=3.8,<4.dev0
+    - python >={{ python_min }}
     - apache-airflow >=2.8.0
     - apprise >=1.8.0
 
@@ -30,6 +30,7 @@ test:
   commands:
     - pip check
   requires:
+    - python {{ python_min }}
     - pip
 
 about:
