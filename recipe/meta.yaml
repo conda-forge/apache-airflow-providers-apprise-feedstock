@@ -1,5 +1,5 @@
 {% set name = "apache-airflow-providers-apprise" %}
-{% set version = "2.0.1" %}
+{% set version = "2.0.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/apache_airflow_providers_apprise-{{ version }}.tar.gz
-  sha256: 6efda395ba5ad5e597f18688e693a01ca4998b155c49951b13f2c70c822e5818
+  sha256: c6a5922fc8f413cd63df93eeedb988608965e62d8a6236a76e9e3e461dc5f4c7
 
 build:
   noarch: python
@@ -20,6 +20,7 @@ requirements:
     - flit-core ==3.11.0
     - pip
   run:
+    - apache-airflow-providers-common-compat >=1.6.0
     - python >={{ python_min }}
     - apache-airflow >=2.9.0
     - apprise >=1.8.0
