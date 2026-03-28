@@ -1,6 +1,6 @@
 context:
   name: apache-airflow-providers-apprise
-  version: "2.3.1"
+  version: "2.3.2"
 
 package:
   name: ${{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/apache_airflow_providers_apprise-${{ version }}.tar.gz
-  sha256: 39360b9db9886aaa5780bfb90eb2d5f50d2f6b477376d1213d2a74a8cc0c6e87
+  sha256: 389df1352e5a2cf4d9280526a2e8db54e6891072ea86bf12af43ea6d81b44660
 
 build:
   noarch: python
@@ -29,7 +29,7 @@ requirements:
 tests:
   - python:
       imports:
-      - airflow.providers.apprise
+        - airflow.providers.apprise
       pip_check: true
       python_version: ${{ python_min }}.*
 
